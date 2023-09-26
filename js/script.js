@@ -158,3 +158,49 @@
     }
     tempChart.update()
   });
+
+const celdas = document.querySelectorAll("table td");
+const tabla = document.querySelector("table");
+const celdas2 = tabla.querySelectorAll("td");
+
+//const celda = document.querySelector("table td");
+
+
+for (let i = 0; i < celdas.length; i++) {
+  const celda = celdas2[i];
+
+  // Obtiene la fila de la celda
+  const fila = celda.parentElement.rowIndex;
+
+  // Obtiene la columna de la celda
+  const columna = celda.cellIndex;
+
+  // Asigna el contenido de la celda a la fila y columna correspondiente
+  celda.textContent = `F ${fila} - C ${columna}`;
+}
+
+for (const celda of celdas) {
+
+ 
+  celda.addEventListener("click", () => {
+    // Muestra la celda seleccionada
+    const fila = celda.parentElement.rowIndex;
+    const parrafo = document.querySelector("#titGraficos");
+   
+  // Obtiene la columna de la celda
+    const columna = celda.cellIndex;
+
+  // Muestra la fila y columna de la celda
+  if (columna===0){
+    celda.style.backgroundColor = "blue";
+    parrafo.textContent = `Gráficos de Dispositivo de la fila ${celda.textContent}`; 
+  }
+  
+   
+    console.log(`La celda seleccionada está en la fila ${fila} y columna ${columna}`);
+    console.log(celda.textContent);
+  });
+  
+
+  
+}

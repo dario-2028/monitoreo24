@@ -51,3 +51,11 @@ table {
   tr {
     background-color: #492c2c;
   }
+  .resaltado {
+    background-color: blue;
+}
+td:first-child {
+  /* tipo de puntero del mouse en la primera columna */
+  cursor: pointer; 
+
+}
